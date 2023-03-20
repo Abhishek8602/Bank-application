@@ -1,0 +1,22 @@
+services:
+  accounts:
+    image: abhishek8602/accounts
+    ports:
+      - "8081:8081"
+    networks:
+      - bank-network
+  cards:
+    image: abhishek8602/cards
+    ports:
+      - "8082:8082"
+    networks:
+      - bank-network  
+  configserver:
+    image: abhishek8602/configserver
+    ports:
+      - "8087:8087"
+    networks:
+      - bank-network    
+
+networks:
+  bank-network : {}
